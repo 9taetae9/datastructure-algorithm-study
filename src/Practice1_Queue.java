@@ -8,7 +8,7 @@ class MyQueue1{
     }
 
     public boolean isEmpty(){
-        if(this.list.size()==0){
+        if(this.list.isEmpty()){
             return true;
         }
         return false;
