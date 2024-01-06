@@ -3,25 +3,25 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node{
+class Node3 {
     char data;
-    Node left;
-    Node right;
+    Node3 left;
+    Node3 right;
 
-    public Node(char data, Node left, Node right){
+    public Node3(char data, Node3 left, Node3 right){
         this.data = data;
         this.left = left;
         this.right = right;
     }
 }
 class BinaryTree2{
-    Node head;
+    Node3 head;
 
     BinaryTree2(){}
     BinaryTree2(char[] arr){
-        Node[] nodes = new Node[arr.length];
+        Node3[] nodes = new Node3[arr.length];
         for(int i=0; i<arr.length; i++){
-            nodes[i] = new Node(arr[i], null, null);
+            nodes[i] = new Node3(arr[i], null, null);
         }
 
         for(int i=0; i<arr.length; i++){
@@ -40,7 +40,7 @@ class BinaryTree2{
         this.head = nodes[0];
     }
 
-    public void preOrder(Node node){
+    public void preOrder(Node3 node){
         if(node == null){
             return;
         }
@@ -49,7 +49,7 @@ class BinaryTree2{
         this.preOrder(node.right);
     }
 
-    public void inOrder(Node node){
+    public void inOrder(Node3 node){
         if(node == null){
             return;
         }
@@ -60,7 +60,7 @@ class BinaryTree2{
 
     }
 
-    public void postOrder(Node node){
+    public void postOrder(Node3 node){
         if(node == null){
             return;
         }
@@ -71,12 +71,12 @@ class BinaryTree2{
 
     }
 
-    public void levelOrder(Node node){
-        Queue<Node> queue = new LinkedList<>();
+    public void levelOrder(Node3 node){
+        Queue<Node3> queue = new LinkedList<>();
         queue.add(node);
 
         while(!queue.isEmpty()){
-            Node cur = queue.poll();
+            Node3 cur = queue.poll();
 
             System.out.print(cur.data + " "); //현재 노드 데이터 출력
             if(cur.left != null){
