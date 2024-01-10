@@ -10,13 +10,13 @@ class Node_{
 }
 
 class MyGraphList{
-    char[] vertices;
+    int[] vertices;
     Node_[] adjList;
     int elemCnt;
 
     public MyGraphList() {}
     public MyGraphList(int size) {
-        this.vertices = new char[size];
+        this.vertices = new int[size];
         this.adjList = new Node_[size];
         this.elemCnt = 0;
     }
@@ -25,7 +25,7 @@ class MyGraphList{
         return this.elemCnt == this.vertices.length;
     }
 
-    public void addVertex(char data){
+    public void addVertex(int data){
         if(isFull()) {
             System.out.println("Graph is full!");
             return;
@@ -46,11 +46,11 @@ class MyGraphList{
 
     public void printAdjacentList(){
         for(int i=0; i<this.elemCnt; i++){
-            System.out.print(this.vertices[i] + ": ");
+            System.out.print((char) this.vertices[i] + ": ");
 
             Node_ cur = this.adjList[i];
             while(cur != null){
-                System.out.print(this.vertices[cur.id]+" ");
+                System.out.print((char) this.vertices[cur.id]+" ");
                 cur = cur.next;
             }
             System.out.println();
